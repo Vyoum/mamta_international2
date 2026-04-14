@@ -42,7 +42,7 @@ export default function Home() {
             <Button variant="primary" className="hidden md:flex flex-1 justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase min-w-[240px]">
               Explore Collection
             </Button>
-            <Button variant="tertiary" className="hidden md:flex flex-1 justify-center text-surface-container-lowest border-surface-container-lowest hover:text-outline-variant min-w-[240px]">
+            <Button variant="secondary" className="hidden md:flex flex-1 justify-center border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest/20 backdrop-blur-sm min-w-[240px]">
               The Journal
             </Button>
           </div>
