@@ -2,23 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/Button";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative w-full h-[90vh] md:h-[90vh] flex items-center justify-center">
-        {/* Background Image */}
+        {/* Background Image Slider */}
         <div className="absolute inset-0 w-full h-full">
-          <img 
-            src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=2000" 
-            alt="Beautiful Model in a Gown" 
-            className="w-full h-full object-cover object-top"
-          />
-          {/* Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent md:hidden"></div>
-          <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
-          <div className="hidden md:block absolute inset-0 bg-black/20"></div>
+          <HeroSlider interval={5000} />
         </div>
 
         {/* Hero Content */}
