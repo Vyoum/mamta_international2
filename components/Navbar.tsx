@@ -47,7 +47,7 @@ export default function Navbar() {
           <div className="absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 lg:flex-none flex items-center justify-center">
             <Link href="/" className="flex flex-col items-center justify-center leading-none group hover:opacity-80 transition-opacity mt-2">
                <span className="font-bodoni text-[20px] lg:text-[32px] tracking-normal text-on-surface uppercase" style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
-               <span className="font-sans text-[7px] lg:text-[11px] tracking-[0.22em] text-on-surface uppercase mt-1 font-medium">International</span>
+               <span className="font-sans text-[7px] lg:text-[11px] tracking-[0.22em] text-on-surface uppercase mt-1 font-medium italic">International</span>
             </Link>
           </div>
           
