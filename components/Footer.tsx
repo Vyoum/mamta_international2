@@ -1,63 +1,139 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-container-low pt-24 pb-8">
-      {/* Desktop Footer */}
-      <div className="hidden md:block container mx-auto px-6">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-20">
-          <div className="flex flex-col items-center justify-center leading-none mb-6 mt-2">
-            <span className="font-bodoni text-[32px] tracking-normal text-on-surface uppercase" style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
-            <span className="font-sans text-[11px] tracking-[0.22em] text-on-surface uppercase mt-1 font-medium">International</span>
+    <footer className="bg-surface-container-lowest">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8">
+          {/* Newsletter Section */}
+          <div className="lg:w-[380px] flex-shrink-0">
+            <p className="text-sm text-on-surface mb-6">
+              Sign up to receive the Mamta International newsletter
+            </p>
+            <form className="w-full">
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full bg-transparent border-b border-outline pb-2 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-on-surface transition-colors"
+              />
+            </form>
+
+            {/* Country Selector */}
+            <div className="mt-12">
+              <p className="text-xs font-medium text-on-surface mb-2">Country Selector</p>
+              <p className="text-xs text-outline">India / English</p>
+            </div>
           </div>
-          <p className="text-sm text-secondary mb-8">
-            Receive exclusive updates, heritage stories, and premier access to our seasonal collections.
-          </p>
-          <form className="w-full relative flex gap-4">
-            <input 
-              type="email" 
-              placeholder="YOUR EMAIL ADDRESS" 
-              className="flex-1 bg-transparent border-b border-outline pb-2 text-sm text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-on-surface transition-colors"
-            />
-            <button type="submit" className="bg-primary text-surface-container-lowest px-10 py-3 text-sm tracking-[0.05em] font-medium hover:bg-on-surface transition-colors uppercase">
-              Subscribe
-            </button>
-          </form>
-        </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-16 text-sm text-secondary">
-          <Link href="#" className="hover:text-on-surface transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-on-surface transition-colors">Terms of Service</Link>
-          <Link href="#" className="hover:text-on-surface transition-colors">Shipping & Returns</Link>
-          <Link href="#" className="hover:text-on-surface transition-colors">Sustainability</Link>
-          <Link href="#" className="hover:text-on-surface transition-colors">Store Locator</Link>
-        </div>
+          {/* Links Sections */}
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
+            {/* May We Help You */}
+            <div>
+              <h4 className="text-xs font-medium text-on-surface mb-4 uppercase tracking-wide">May We Help You?</h4>
+              <ul className="space-y-3">
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Follow Your Order</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Follow Your Return</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Book an appointment in Boutique</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">FAQ</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Contact Us</Link></li>
+              </ul>
+            </div>
 
-        <div className="text-center font-serif italic text-primary-container mb-6">
-          Crafting beauty since 1984.
-        </div>
+            {/* Services */}
+            <div>
+              <h4 className="text-xs font-medium text-on-surface mb-4 uppercase tracking-wide">Services</h4>
+              <ul className="space-y-3">
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Customer Care</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Returns and Exchanges</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Shipping</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Payments</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Size Guide</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Boutique Services</Link></li>
+              </ul>
+            </div>
 
-        <div className="text-center text-xs text-outline">
-          &copy; {new Date().getFullYear()} Mamta International. All Rights Reserved.
+            {/* The Company */}
+            <div>
+              <h4 className="text-xs font-medium text-on-surface mb-4 uppercase tracking-wide">The Company</h4>
+              <ul className="space-y-3">
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Maison</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Sustainability</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Careers</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Corporate Information</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Integrity Helpline</Link></li>
+              </ul>
+            </div>
+
+            {/* Legal Area */}
+            <div>
+              <h4 className="text-xs font-medium text-on-surface mb-4 uppercase tracking-wide">Legal Area</h4>
+              <ul className="space-y-3">
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Terms and Conditions of Use</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Terms and Conditions of Sale</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Privacy Policy</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">DPO</Link></li>
+                <li><Link href="#" className="text-xs text-outline hover:text-on-surface transition-colors">Cookies Settings</Link></li>
+              </ul>
+            </div>
+
+            {/* Follow Us & Download App */}
+            <div>
+              <h4 className="text-xs font-medium text-on-surface mb-4 uppercase tracking-wide">Follow Us</h4>
+              <div className="flex gap-2 mb-8">
+                {/* Instagram */}
+                <Link href="#" className="w-7 h-7 rounded-full border border-on-surface flex items-center justify-center hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </Link>
+                {/* Facebook */}
+                <Link href="#" className="w-7 h-7 rounded-full border border-on-surface flex items-center justify-center hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                  </svg>
+                </Link>
+                {/* TikTok */}
+                <Link href="#" className="w-7 h-7 rounded-full border border-on-surface flex items-center justify-center hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                  </svg>
+                </Link>
+                {/* X (Twitter) */}
+                <Link href="#" className="w-7 h-7 rounded-full border border-on-surface flex items-center justify-center hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </Link>
+                {/* Threads */}
+                <Link href="#" className="w-7 h-7 rounded-full border border-on-surface flex items-center justify-center hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.89 3.589 12c.027 3.107.718 5.496 2.054 7.164 1.43 1.783 3.631 2.698 6.544 2.72 2.35-.02 4.512-.593 5.87-1.816 1.473-1.178 2.18-2.792 2.18-4.94v-.088h-1.886v.088c0 1.545-.458 2.693-1.363 3.416-.98.784-2.456 1.222-4.14 1.222h-.661v-2.12h.661c.892 0 1.634-.155 2.206-.46.555-.296.997-.746 1.313-1.338.264-.5.399-1.073.399-1.702 0-2.15-1.634-3.91-3.642-3.91-1.005 0-1.952.44-2.596 1.207-.633.756-.982 1.786-.982 2.9 0 .938.233 1.787.693 2.524.46.74 1.118 1.314 1.958 1.71l-.875 1.922c-1.19-.562-2.15-1.4-2.851-2.496-.701-1.095-1.058-2.373-1.058-3.798 0-1.617.51-3.077 1.437-4.116 1.018-1.14 2.425-1.767 3.96-1.767 3.062 0 5.553 2.606 5.553 5.81 0 .954-.21 1.814-.626 2.557-.415.742-.999 1.328-1.736 1.744-.688.387-1.48.587-2.355.587h-.126c-.236 0-.47-.02-.699-.062l-.31 1.83c.33.054.664.088.999.1h.159c1.246 0 2.402-.293 3.439-.87 1.037-.576 1.885-1.4 2.522-2.45.637-1.05.96-2.24.96-3.538 0-2.15-.779-4.085-2.193-5.45C17.753 4.905 15.78 4.08 13.491 4.08c-2.556 0-4.54.87-5.897 2.588-1.225 1.55-1.87 3.632-1.916 6.184v.295c.047 2.548.692 4.63 1.917 6.183 1.358 1.72 3.341 2.59 5.895 2.59h.696z" />
+                  </svg>
+                </Link>
+                {/* Plus */}
+                <Link href="#" className="w-7 h-7 rounded-full border border-on-surface flex items-center justify-center hover:bg-on-surface hover:text-surface-container-lowest transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                </Link>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Footer */}
-      <div className="md:hidden container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mx-auto mb-16 px-6">
-          <div className="flex flex-col items-center justify-center leading-none mb-8 mt-2">
-            <span className="font-bodoni text-[24px] tracking-normal text-on-surface uppercase" style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
-            <span className="font-sans text-[8px] tracking-[0.2em] text-outline uppercase mt-1 font-medium">International</span>
-          </div>
-
-          <div className="flex justify-center items-center gap-6 mb-8 text-[8px] tracking-[0.2em] uppercase text-outline">
-            <Link href="#" className="hover:text-on-surface transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-on-surface transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-on-surface transition-colors">Shipping</Link>
-          </div>
-
-          <div className="text-[7px] tracking-[0.2em] uppercase text-outline">
-            &copy; {new Date().getFullYear()} Mamta International
+      {/* Bottom Bar */}
+      <div className="border-t border-outline-variant">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-xs text-outline">
+            <span>Powered by Manufacture's Mart</span>
+            <span className="hidden md:inline">Copyright {new Date().getFullYear()} MAMTA INTERNATIONAL - All rights reserved</span>
+            <span className="md:hidden">Copyright {new Date().getFullYear()} MAMTA INTERNATIONAL</span>
+            <Link href="#" className="hover:text-on-surface transition-colors">Vendor information</Link>
           </div>
         </div>
       </div>
