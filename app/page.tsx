@@ -2,23 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/Button";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative w-full h-[90vh] md:h-[90vh] flex items-center justify-center">
-        {/* Background Image */}
+        {/* Background Image Slider */}
         <div className="absolute inset-0 w-full h-full">
-          <img 
-            src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=2000" 
-            alt="Beautiful Model in a Gown" 
-            className="w-full h-full object-cover object-top"
-          />
-          {/* Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent md:hidden"></div>
-          <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
-          <div className="hidden md:block absolute inset-0 bg-black/20"></div>
+          <HeroSlider interval={5000} />
         </div>
 
         {/* Hero Content */}
@@ -38,16 +31,11 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center mt-4 md:mt-0 md:gap-6 w-full">
-            {/* Mobile Button */}
-            <Button variant="secondary" className="md:hidden border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest hover:text-black uppercase text-[10px] tracking-[0.1em] px-12 py-4 bg-black/20 backdrop-blur-sm self-center">
-              Explore The Collection
-            </Button>
-            
             {/* Desktop Buttons */}
             <Button variant="primary" className="hidden md:flex flex-1 justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase min-w-[240px]">
               Explore Collection
             </Button>
-            <Button variant="tertiary" className="hidden md:flex flex-1 justify-center text-surface-container-lowest border-surface-container-lowest hover:text-outline-variant min-w-[240px]">
+            <Button variant="secondary" className="hidden md:flex flex-1 justify-center border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest/20 backdrop-blur-sm min-w-[240px]">
               The Journal
             </Button>
           </div>
