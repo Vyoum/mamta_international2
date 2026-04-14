@@ -38,11 +38,6 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center mt-4 md:mt-0 md:gap-6 w-full">
-            {/* Mobile Button */}
-            <Button variant="secondary" className="md:hidden border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest hover:text-black uppercase text-[10px] tracking-[0.1em] px-12 py-4 bg-black/20 backdrop-blur-sm self-center">
-              Explore The Collection
-            </Button>
-            
             {/* Desktop Buttons */}
             <Button variant="primary" className="hidden md:flex flex-1 justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase min-w-[240px]">
               Explore Collection
