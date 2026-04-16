@@ -51,7 +51,7 @@ export default function Navbar() {
             : 'bg-transparent border-b border-transparent'
         }`}
       >
-        <div className="container mx-auto px-8 py-4 flex items-center justify-between relative">
+        <div className="container mx-auto px-8 pb-4 pt-0 flex items-center justify-between relative">
           
           {/* Mobile Hamburger (Left Side) */}
           <div className="flex-1 lg:hidden">
