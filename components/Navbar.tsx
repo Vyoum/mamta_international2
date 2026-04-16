@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const menuItems = [
   { label: "SALE", href: "/sale", highlight: true },
@@ -20,11 +20,38 @@ const menuItems = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 40px is roughly the height of the announcement bar
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial state
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-surface/80 backdrop-blur-[20px] transition-all border-b border-surface-container-low/50">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between relative">
+      {/* Announcement Bar - Not sticky, scrolls away */}
+      <div className="bg-black text-white py-2.5 text-center">
+        <p className="text-[11px] uppercase tracking-[0.15em] font-medium">
+          Complimentary Worldwide Delivery
+        </p>
+      </div>
+
+      {/* Main Navbar - Sticky with transparent to white transition */}
+      <header 
+        className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+          isScrolled 
+            ? 'bg-white border-b border-gray-200 shadow-sm' 
+            : 'bg-transparent border-b border-transparent'
+        }`}
+      >
+        <div className="container mx-auto px-8 py-4 flex items-center justify-between relative">
           
           {/* Mobile Hamburger (Left Side) */}
           <div className="flex-1 lg:hidden">
@@ -146,7 +173,7 @@ export default function Navbar() {
         {/* Login at Bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200 bg-white">
           <Link 
-            href="/login" 
+            href="/auth/login" 
             className="flex items-center gap-3 text-on-surface hover:opacity-70 transition-opacity"
             onClick={() => setIsMenuOpen(false)}
           >
