@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Brand */}
           <div className="absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 lg:flex-none flex items-center justify-center">
             <Link href="/" className="flex flex-col items-center justify-center leading-none group hover:opacity-80 transition-opacity mt-2">
-               <span className={`font-bodoni text-[20px] lg:text-[32px] tracking-normal uppercase transition-colors duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`} style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
+               <span className={`font-bodoni text-[20px] lg:text-[30px] tracking-normal uppercase transition-colors duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`} style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
                <span className={`font-sans text-[7px] lg:text-[11px] tracking-[0.22em] uppercase mt-1 font-medium italic transition-colors duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`}>International</span>
             </Link>
           </div>
