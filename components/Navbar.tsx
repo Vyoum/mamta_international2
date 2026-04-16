@@ -45,13 +45,13 @@ export default function Navbar() {
 
       {/* Main Navbar - Sticky with transparent to white transition */}
       <header 
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 -mt-[1px] ${
           isScrolled 
             ? 'bg-white border-b border-gray-200 shadow-sm' 
             : 'bg-transparent border-b border-transparent'
         }`}
       >
-        <div className="container mx-auto px-8 pb-4 pt-0 flex items-center justify-between relative">
+        <div className="container mx-auto px-8 py-3 flex items-center justify-between relative">
           
           {/* Mobile Hamburger (Left Side) */}
           <div className="flex-1 lg:hidden">
