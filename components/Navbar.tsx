@@ -45,7 +45,7 @@ export default function Navbar() {
 
       {/* Main Navbar - Sticky with transparent to white transition */}
       <header 
-        className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           isScrolled 
             ? 'bg-white border-b border-gray-200 shadow-sm' 
             : 'bg-transparent border-b border-transparent'
@@ -56,7 +56,7 @@ export default function Navbar() {
           {/* Mobile Hamburger (Left Side) */}
           <div className="flex-1 lg:hidden">
             <button 
-              className="text-on-surface hover:opacity-70 transition-opacity flex items-center" 
+              className={`hover:opacity-70 transition-all duration-300 flex items-center ${isScrolled ? 'text-on-surface' : 'text-white'}`}
               aria-label="Menu"
               type="button"
               onClick={() => setIsMenuOpen(true)}
@@ -68,26 +68,26 @@ export default function Navbar() {
           {/* Brand */}
           <div className="absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 lg:flex-none flex items-center justify-center">
             <Link href="/" className="flex flex-col items-center justify-center leading-none group hover:opacity-80 transition-opacity mt-2">
-               <span className="font-bodoni text-[20px] lg:text-[32px] tracking-normal text-on-surface uppercase" style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
-               <span className="font-sans text-[7px] lg:text-[11px] tracking-[0.22em] text-on-surface uppercase mt-1 font-medium italic">International</span>
+               <span className={`font-bodoni text-[20px] lg:text-[32px] tracking-normal uppercase transition-colors duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`} style={{ transform: "scaleY(1.1)", transformOrigin: "bottom" }}>MAMTA</span>
+               <span className={`font-sans text-[7px] lg:text-[11px] tracking-[0.22em] uppercase mt-1 font-medium italic transition-colors duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`}>International</span>
             </Link>
           </div>
           
           {/* Navigation Desktop */}
           <nav className="hidden lg:flex flex-1 justify-center items-center gap-10">
-            <Link href="/collections" className="text-xs font-semibold tracking-[0.1em] text-on-surface-variant hover:text-on-surface transition-colors uppercase">
+            <Link href="/collections" className={`text-xs font-semibold tracking-[0.1em] hover:opacity-70 transition-all duration-300 uppercase ${isScrolled ? 'text-on-surface-variant hover:text-on-surface' : 'text-white/90 hover:text-white'}`}>
               Collections
             </Link>
-            <Link href="#" className="text-xs font-semibold tracking-[0.1em] text-on-surface-variant hover:text-on-surface transition-colors uppercase">
+            <Link href="#" className={`text-xs font-semibold tracking-[0.1em] hover:opacity-70 transition-all duration-300 uppercase ${isScrolled ? 'text-on-surface-variant hover:text-on-surface' : 'text-white/90 hover:text-white'}`}>
               Couture
             </Link>
-            <Link href="/collections" className="text-xs font-semibold tracking-[0.1em] text-outline hover:text-on-surface transition-colors uppercase">
+            <Link href="/collections" className={`text-xs font-semibold tracking-[0.1em] hover:opacity-70 transition-all duration-300 uppercase ${isScrolled ? 'text-outline hover:text-on-surface' : 'text-white/80 hover:text-white'}`}>
               Heritage
             </Link>
-            <Link href="#" className="text-xs font-semibold tracking-[0.1em] text-outline hover:text-on-surface transition-colors uppercase">
+            <Link href="#" className={`text-xs font-semibold tracking-[0.1em] hover:opacity-70 transition-all duration-300 uppercase ${isScrolled ? 'text-outline hover:text-on-surface' : 'text-white/80 hover:text-white'}`}>
               The Atelier
             </Link>
-            <Link href="#" className="text-xs font-semibold tracking-[0.1em] text-outline hover:text-on-surface transition-colors uppercase">
+            <Link href="#" className={`text-xs font-semibold tracking-[0.1em] hover:opacity-70 transition-all duration-300 uppercase ${isScrolled ? 'text-outline hover:text-on-surface' : 'text-white/80 hover:text-white'}`}>
               Contact
             </Link>
           </nav>
@@ -95,24 +95,24 @@ export default function Navbar() {
           {/* Icons (Right Side) */}
           <div className="flex-1 lg:flex-none flex items-center justify-end gap-4 lg:gap-5">
             {/* Search - Desktop Only */}
-            <button className="hidden lg:block text-on-surface hover:opacity-70 transition-opacity" aria-label="Search">
+            <button className={`hidden lg:block hover:opacity-70 transition-all duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`} aria-label="Search">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
             </button>
             {/* Profile Icon */}
-            <Link href="/account" className="text-on-surface hover:opacity-70 transition-opacity" aria-label="Account">
+            <Link href="/account" className={`hover:opacity-70 transition-all duration-300 ${isScrolled ? 'text-on-surface' : 'text-white'}`} aria-label="Account">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
             </Link>
             {/* Wishlist Icon */}
-            <Link href="/wishlist" className="text-on-surface hover:opacity-70 transition-opacity relative" aria-label="Wishlist">
+            <Link href="/wishlist" className={`hover:opacity-70 transition-all duration-300 relative ${isScrolled ? 'text-on-surface' : 'text-white'}`} aria-label="Wishlist">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
               </svg>
             </Link>
             {/* Cart Icon */}
-            <Link href="/cart" className="text-on-surface hover:opacity-70 transition-opacity relative" aria-label="Shopping Bag">
+            <Link href="/cart" className={`hover:opacity-70 transition-all duration-300 relative ${isScrolled ? 'text-on-surface' : 'text-white'}`} aria-label="Shopping Bag">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
               <span className="absolute -top-1 -right-1 bg-primary text-surface-container-lowest text-[10px] w-3 h-3 flex items-center justify-center">1</span>
             </Link>
