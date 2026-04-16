@@ -7,8 +7,8 @@ import HeroSlider from "@/components/HeroSlider";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full h-[90vh] md:h-[90vh] flex items-center justify-center">
+      {/* Hero Section - negative margin to pull behind navbar */}
+      <section className="relative w-full h-[100vh] md:h-[100vh] flex items-center justify-center -mt-[104px] pt-[104px]">
         {/* Background Image Slider */}
         <div className="absolute inset-0 w-full h-full">
           <HeroSlider interval={5000} />
