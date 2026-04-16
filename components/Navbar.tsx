@@ -25,7 +25,9 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       // 40px is roughly the height of the announcement bar
-      setIsScrolled(window.scrollY > 40);
+      const scrolled = window.scrollY > 40;
+      console.log("[v0] scrollY:", window.scrollY, "isScrolled:", scrolled);
+      setIsScrolled(scrolled);
     };
 
     window.addEventListener("scroll", handleScroll);
