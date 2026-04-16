@@ -6,6 +6,18 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import RemoveFromWishlistButton from "@/components/RemoveFromWishlistButton"
 
+type WishlistItem = {
+  id: string
+  created_at: string
+  products: {
+    id: string
+    name: string
+    price: number
+    images: string[]
+    slug: string
+  } | null
+}
+
 export default async function WishlistPage() {
   const supabase = await createClient()
   
@@ -29,7 +41,7 @@ export default async function WishlistPage() {
       )
     `)
     .eq("user_id", user.id)
-    .order("created_at", { ascending: false })
+    .order("created_at", { ascending: false }) as { data: WishlistItem[] | null }
 
   return (
     <>
