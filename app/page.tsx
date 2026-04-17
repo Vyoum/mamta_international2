@@ -55,16 +55,55 @@ export default function Home() {
           <Button variant="tertiary">View All Arrivals</Button>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 items-start">
-          <div className="lg:-mt-12">
-            <ProductCard title="The Aurelia Gown" collection="Ivory Collection" price="$12,400" imageUrl="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=800" href="/product/aurelia-silk-gown" showHeart />
+        {/* Desktop Grid - 4 columns */}
+        <div className="hidden md:grid grid-cols-4 gap-6">
+          {/* Card 1 */}
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-3 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=800" alt="The Aurelia Gown" className="w-full h-full object-cover" />
+              <span className="absolute bottom-3 left-3 bg-red-600 text-white text-[10px] font-bold px-3 py-1.5 uppercase">Save 25%</span>
+            </div>
+            <h3 className="font-semibold text-base text-on-surface leading-tight mb-1">The Aurelia Gown</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-base font-bold text-on-surface">₹ 9,300.00</span>
+              <span className="text-sm text-outline line-through">₹ 12,400.00</span>
+            </div>
           </div>
-          <div className="lg:mt-24">
-            <ProductCard title="The Seraphina Slip" collection="Heritage Collection" price="$3,800" imageUrl="https://images.unsplash.com/photo-1572804013309-82a89b47afc2?auto=format&fit=crop&q=80&w=800" href="/product/seraphina-slip" showHeart />
+          {/* Card 2 */}
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-3 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800" alt="The Seraphina Slip" className="w-full h-full object-cover" />
+              <span className="absolute bottom-3 left-3 bg-red-600 text-white text-[10px] font-bold px-3 py-1.5 uppercase">Save 25%</span>
+            </div>
+            <h3 className="font-semibold text-base text-on-surface leading-tight mb-1">The Seraphina Slip</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-base font-bold text-on-surface">₹ 2,850.00</span>
+              <span className="text-sm text-outline line-through">₹ 3,800.00</span>
+            </div>
           </div>
-          <div className="lg:mt-8">
-            <ProductCard title="The Nightfall Velvet" collection="Midnight Atelier" price="$5,100" imageUrl="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=800" href="/product/nightfall-velvet" showHeart />
+          {/* Card 3 */}
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-3 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=800" alt="The Nightfall Velvet" className="w-full h-full object-cover" />
+              <span className="absolute bottom-3 left-3 bg-red-600 text-white text-[10px] font-bold px-3 py-1.5 uppercase">Save 32%</span>
+            </div>
+            <h3 className="font-semibold text-base text-on-surface leading-tight mb-1">The Nightfall Velvet</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-base font-bold text-on-surface">₹ 3,468.00</span>
+              <span className="text-sm text-outline line-through">₹ 5,100.00</span>
+            </div>
+          </div>
+          {/* Card 4 */}
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-3 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1572804013309-82a89b47afc2?auto=format&fit=crop&q=80&w=800" alt="The Midnight Drape" className="w-full h-full object-cover" />
+              <span className="absolute bottom-3 left-3 bg-red-600 text-white text-[10px] font-bold px-3 py-1.5 uppercase">Save 32%</span>
+            </div>
+            <h3 className="font-semibold text-base text-on-surface leading-tight mb-1">The Midnight Drape</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-base font-bold text-on-surface">₹ 4,080.00</span>
+              <span className="text-sm text-outline line-through">₹ 6,000.00</span>
+            </div>
           </div>
         </div>
 
@@ -76,31 +115,54 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-12 max-w-sm mx-auto md:hidden">
+        {/* Mobile Grid - 2 columns */}
+        <div className="grid grid-cols-2 gap-3 md:hidden">
           {/* Card 1 */}
-          <div className="w-full pb-4">
-            <div className="bg-surface-container-low p-6 mb-4 flex items-center justify-center">
-              <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=600" alt="The Aurelia Gown" className="w-full h-auto object-contain max-h-[400px] shadow-sm mix-blend-multiply" />
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-2 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=600" alt="The Aurelia Gown" className="w-full h-full object-cover" />
+              <span className="absolute bottom-2 left-2 bg-red-600 text-white text-[9px] font-bold px-2 py-1 uppercase">Save 25%</span>
             </div>
-            <div className="flex justify-between items-end border-b border-outline-variant/30 pb-3">
-              <div className="flex flex-col gap-1">
-                <h3 className="font-serif text-lg text-on-surface">The Aurelia Gown</h3>
-                <p className="text-[10px] text-outline font-medium tracking-wide">Hand-pleated Tulle</p>
-              </div>
-              <span className="text-[8px] uppercase tracking-[0.2em] text-primary cursor-pointer hover:opacity-70">DETAILS</span>
+            <h3 className="font-semibold text-sm text-on-surface leading-tight mb-1">The Aurelia Gown</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-on-surface">₹ 9,300.00</span>
+              <span className="text-xs text-outline line-through">₹ 12,400.00</span>
             </div>
           </div>
           {/* Card 2 */}
-          <div className="w-full pb-4">
-            <div className="bg-surface-container-low p-10 mb-4 flex items-center justify-center">
-              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=600" alt="The Seraphina Slip" className="w-full h-auto object-contain max-h-[300px] shadow-sm mix-blend-multiply" />
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-2 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=600" alt="The Seraphina Slip" className="w-full h-full object-cover" />
+              <span className="absolute bottom-2 left-2 bg-red-600 text-white text-[9px] font-bold px-2 py-1 uppercase">Save 25%</span>
             </div>
-            <div className="flex justify-between items-end border-b border-outline-variant/30 pb-3">
-              <div className="flex flex-col gap-1">
-                <h3 className="font-serif text-lg text-on-surface">The Seraphina Slip</h3>
-                <p className="text-[10px] text-outline font-medium tracking-wide">100% Mulberry Silk</p>
-              </div>
-              <span className="text-[8px] uppercase tracking-[0.2em] text-primary cursor-pointer hover:opacity-70">DETAILS</span>
+            <h3 className="font-semibold text-sm text-on-surface leading-tight mb-1">The Seraphina Slip</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-on-surface">₹ 2,850.00</span>
+              <span className="text-xs text-outline line-through">₹ 3,800.00</span>
+            </div>
+          </div>
+          {/* Card 3 */}
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-2 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=600" alt="The Nightfall Velvet" className="w-full h-full object-cover" />
+              <span className="absolute bottom-2 left-2 bg-red-600 text-white text-[9px] font-bold px-2 py-1 uppercase">Save 32%</span>
+            </div>
+            <h3 className="font-semibold text-sm text-on-surface leading-tight mb-1">The Nightfall Velvet</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-on-surface">₹ 3,468.00</span>
+              <span className="text-xs text-outline line-through">₹ 5,100.00</span>
+            </div>
+          </div>
+          {/* Card 4 */}
+          <div className="w-full">
+            <div className="relative aspect-[3/4] bg-surface-container-low mb-2 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1572804013309-82a89b47afc2?auto=format&fit=crop&q=80&w=600" alt="The Midnight Drape" className="w-full h-full object-cover" />
+              <span className="absolute bottom-2 left-2 bg-red-600 text-white text-[9px] font-bold px-2 py-1 uppercase">Save 32%</span>
+            </div>
+            <h3 className="font-semibold text-sm text-on-surface leading-tight mb-1">The Midnight Drape</h3>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-bold text-on-surface">₹ 4,080.00</span>
+              <span className="text-xs text-outline line-through">₹ 6,000.00</span>
             </div>
           </div>
         </div>
