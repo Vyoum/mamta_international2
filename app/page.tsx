@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* New Arrivals */}
-      <section className="py-20 md:py-24 bg-surface container mx-auto px-6">
+      <section className="py-10 md:py-24 bg-surface container mx-auto px-6">
         {/* Desktop Header */}
         <div className="hidden md:flex justify-between items-end mb-16 border-b border-outline-variant/30 pb-6">
           <div className="max-w-xl">
@@ -69,10 +69,10 @@ export default function Home() {
         </div>
 
         {/* Mobile Header & Layout */}
-        <div className="md:hidden flex flex-col mb-12">
-          <div className="max-w-xl text-left border-b border-outline-variant/30 pb-4">
-            <span className="text-[9px] uppercase tracking-[0.2em] text-outline block mb-2">MODERN HERITAGE</span>
-            <h2 className="font-serif text-4xl mb-2 text-on-surface">New Arrivals</h2>
+        <div className="md:hidden flex flex-col mb-8">
+          <div className="max-w-xl text-left border-b border-outline-variant/30 pb-3">
+            <span className="text-[9px] uppercase tracking-[0.2em] text-outline block mb-1">MODERN HERITAGE</span>
+            <h2 className="font-serif text-2xl mb-1 text-on-surface">New Arrivals</h2>
           </div>
         </div>
 
