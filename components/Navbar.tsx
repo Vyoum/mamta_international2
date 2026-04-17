@@ -45,7 +45,7 @@ export default function Navbar() {
 
       {/* Main Navbar - Sticky with transparent to white transition */}
       <header 
-        className={`sticky top-0 z-50 w-full transition-all duration-300 -mt-[1px] ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 lg:-mt-px ${
           isScrolled 
             ? 'bg-white border-b border-gray-200 shadow-sm' 
             : 'bg-transparent border-b border-transparent'

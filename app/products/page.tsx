@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import AddToCartButton from "@/components/AddToCartButton"
 
 export default async function ProductsPage({
   searchParams,
@@ -79,7 +80,7 @@ export default async function ProductsPage({
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar - Categories */}
-            <aside className="lg:w-56 flex-shrink-0">
+            <aside className="lg:w-56 shrink-0">
               <h3 className="text-xs font-medium text-on-surface uppercase tracking-wide mb-4">
                 Categories
               </h3>
@@ -107,36 +108,42 @@ export default async function ProductsPage({
               {products && products.length > 0 ? (
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
                   {products.map((product) => (
-                    <Link 
-                      key={product.id}
-                      href={`/products/${product.slug}`}
-                      className="group"
-                    >
-                      <div className="aspect-[3/4] bg-outline-variant/10 relative overflow-hidden mb-3">
-                        {product.images?.[0] ? (
-                          <Image
-                            src={product.images[0]}
-                            alt={product.name}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-on-surface/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                              <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                              <circle cx="9" cy="9" r="2"/>
-                              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
-                            </svg>
-                          </div>
-                        )}
-                      </div>
-                      <h3 className="text-sm text-on-surface uppercase tracking-wide mb-1 line-clamp-2 group-hover:underline">
-                        {product.name}
-                      </h3>
-                      <p className="text-sm text-on-surface/70">
-                        ${product.price?.toLocaleString()}
-                      </p>
-                    </Link>
+                    <div key={product.id} className="group">
+                      <Link href={`/products/${product.slug}`} className="block">
+                        <div className="aspect-3/4 bg-outline-variant/10 relative overflow-hidden mb-3">
+                          {product.images?.[0] ? (
+                            <Image
+                              src={product.images[0]}
+                              alt={product.name}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center text-on-surface/30">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                                <circle cx="9" cy="9" r="2"/>
+                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                              </svg>
+                            </div>
+                          )}
+                        </div>
+                        <h3 className="text-sm text-on-surface uppercase tracking-wide mb-1 line-clamp-2 group-hover:underline">
+                          {product.name}
+                        </h3>
+                        <p className="text-sm text-on-surface/70 mb-3">
+                          ${product.price?.toLocaleString()}
+                        </p>
+                      </Link>
+
+                      <AddToCartButton
+                        productId={product.id}
+                        slug={product.slug}
+                        name={product.name}
+                        price={product.price ?? 0}
+                        image={product.images?.[0]}
+                      />
+                    </div>
                   ))}
                 </div>
               ) : (

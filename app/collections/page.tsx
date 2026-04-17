@@ -56,7 +56,7 @@ export default function Collection() {
       </div>
 
       {/* Toolbar / Filters */}
-      <div className="container mx-auto px-6 py-6 flex flex-wrap justify-between items-center text-xs tracking-[0.1em] text-on-surface-variant font-medium border-b border-outline-variant/10">
+      <div className="container mx-auto px-6 py-6 flex flex-wrap justify-between items-center text-xs tracking-widest text-on-surface-variant font-medium border-b border-outline-variant/10">
         <div className="flex gap-10">
            <div className="flex flex-col gap-2">
              <span className="text-[10px] uppercase text-outline">Collection</span>
@@ -83,17 +83,17 @@ export default function Collection() {
           
           {/* Item 1 */}
           <div className="mt-0">
-             <ProductCard title={products[0].title} price={products[0].price} collection={products[0].collection} imageUrl={products[0].image} href="/product/the-seraphina-gown" showHeart />
+             <ProductCard title={products[0].title} price={products[0].price} collection={products[0].collection} imageUrl={products[0].image} href="/product/the-seraphina-gown" showHeart showAddToCart />
           </div>
 
           {/* Item 2: Offset */}
           <div className="mt-12">
-             <ProductCard title={products[1].title} price={products[1].price} collection={products[1].collection} imageUrl={products[1].image} href="/product/luna-slip" showHeart />
+             <ProductCard title={products[1].title} price={products[1].price} collection={products[1].collection} imageUrl={products[1].image} href="/product/luna-slip" showHeart showAddToCart />
           </div>
 
           {/* Item 3 */}
           <div className="mt-0">
-             <ProductCard title={products[2].title} price={products[2].price} collection={products[2].collection} imageUrl={products[2].image} href="/product/nocturnal-tulle" showHeart />
+             <ProductCard title={products[2].title} price={products[2].price} collection={products[2].collection} imageUrl={products[2].image} href="/product/nocturnal-tulle" showHeart showAddToCart />
           </div>
 
           {/* Spotlight Interstitial spanning 2 columns */}
@@ -113,7 +113,7 @@ export default function Collection() {
 
           {/* Item 4 */}
           <div className="mt-12">
-             <ProductCard title={products[3].title} price={products[3].price} collection={products[3].collection} imageUrl={products[3].image} href="/product/elysian-wrap" showHeart />
+             <ProductCard title={products[3].title} price={products[3].price} collection={products[3].collection} imageUrl={products[3].image} href="/product/elysian-wrap" showHeart showAddToCart />
           </div>
 
         </div>
