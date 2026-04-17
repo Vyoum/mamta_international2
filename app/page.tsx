@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - negative margin to pull behind navbar only (not announcement bar) */}
-      <section className="relative w-full h-[80vh] md:h-[80vh] flex items-center justify-center -mt-[52px] md:-mt-[52px] pt-[52px] md:pt-[52px]">
+      <section className="relative w-full h-[80vh] md:h-[100vh] flex items-center justify-center -mt-[52px] md:-mt-[52px] pt-[52px] md:pt-[52px]">
         {/* Background Image Slider */}
         <div className="absolute inset-0 w-full h-full">
           <HeroSlider interval={5000} />
