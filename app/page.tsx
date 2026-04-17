@@ -31,18 +31,11 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center mt-4 md:mt-0 gap-3 md:gap-6 w-full">
-            {/* Mobile Buttons */}
-            <Button variant="primary" className="md:hidden flex justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase text-[10px] tracking-[0.1em] px-6 py-2.5 min-w-[140px]">
+            {/* Buttons - Smaller on mobile, larger on desktop */}
+            <Button variant="primary" className="flex justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase text-[10px] md:text-xs tracking-[0.1em] px-5 py-2 md:px-8 md:py-3 min-w-[120px] md:min-w-[240px] md:flex-1">
               Explore Collection
             </Button>
-            <Button variant="secondary" className="md:hidden flex justify-center border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest/20 backdrop-blur-sm text-[10px] tracking-[0.1em] px-6 py-2.5 min-w-[140px]">
-              The Journal
-            </Button>
-            {/* Desktop Buttons */}
-            <Button variant="primary" className="hidden md:flex flex-1 justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase min-w-[240px]">
-              Explore Collection
-            </Button>
-            <Button variant="secondary" className="hidden md:flex flex-1 justify-center border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest/20 backdrop-blur-sm min-w-[240px]">
+            <Button variant="secondary" className="flex justify-center border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest/20 backdrop-blur-sm text-[10px] md:text-xs tracking-[0.1em] px-5 py-2 md:px-8 md:py-3 min-w-[120px] md:min-w-[240px] md:flex-1">
               The Journal
             </Button>
           </div>
