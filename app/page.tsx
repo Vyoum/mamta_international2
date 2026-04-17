@@ -108,7 +108,7 @@ export default function Home() {
         </div>
 
         {/* Mobile Header & Layout */}
-        <div className="md:hidden flex flex-col mb-8">
+        <div className="md:hidden flex flex-col mb-4">
           <div className="max-w-xl text-left border-b border-outline-variant/30 pb-3">
             <span className="text-[9px] uppercase tracking-[0.2em] text-outline block mb-1">MODERN HERITAGE</span>
             <h2 className="font-serif text-2xl mb-1 text-on-surface">New Arrivals</h2>
