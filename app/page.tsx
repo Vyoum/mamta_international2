@@ -30,7 +30,14 @@ export default function Home() {
             Discover the Spring/Summer '24 collection: where our heritage merges with contemporary silhouettes.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center mt-4 md:mt-0 md:gap-6 w-full">
+          <div className="flex flex-col sm:flex-row justify-center mt-4 md:mt-0 gap-3 md:gap-6 w-full">
+            {/* Mobile Buttons */}
+            <Button variant="primary" className="md:hidden flex justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase text-[10px] tracking-[0.1em] px-6 py-2.5 min-w-[140px]">
+              Explore Collection
+            </Button>
+            <Button variant="secondary" className="md:hidden flex justify-center border-surface-container-lowest/50 text-surface-container-lowest hover:bg-surface-container-lowest/20 backdrop-blur-sm text-[10px] tracking-[0.1em] px-6 py-2.5 min-w-[140px]">
+              The Journal
+            </Button>
             {/* Desktop Buttons */}
             <Button variant="primary" className="hidden md:flex flex-1 justify-center bg-primary/90 backdrop-blur-sm border border-primary-container text-surface-container-lowest hover:bg-primary uppercase min-w-[240px]">
               Explore Collection
