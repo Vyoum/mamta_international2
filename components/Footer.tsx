@@ -20,11 +20,36 @@ export default function Footer() {
                 className="w-full bg-transparent border-b border-outline pb-2 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-on-surface transition-colors"
               />
             </form>
+            <p className="mt-4 text-xs text-outline">
+              Support:{" "}
+              <a
+                href="mailto:mamtaagarwal1963@gmail.com"
+                className="text-on-surface hover:underline"
+              >
+                mamtaagarwal1963@gmail.com
+              </a>
+            </p>
 
             {/* Country Selector */}
             <div className="mt-12">
               <p className="text-xs font-medium text-on-surface mb-2">Country Selector</p>
               <p className="text-xs text-outline">India / English</p>
+            </div>
+
+            {/* Office Addresses */}
+            <div className="mt-12">
+              <p className="text-xs font-medium text-on-surface mb-3 uppercase tracking-wide">
+                Offices
+              </p>
+              <div className="space-y-4 text-xs text-outline leading-relaxed">
+                <address className="not-italic">
+                  1st Floor, SA-40, DD Puram, Bareilly, Uttar Pradesh
+                </address>
+                <address className="not-italic">
+                  17, Maurya Complex, B-28 Subash Chowk, Laxmi Nagar, Delhi - 110
+                  092
+                </address>
+              </div>
             </div>
           </div>
 
