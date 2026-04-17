@@ -56,7 +56,7 @@ export default function Home() {
         </div>
 
         {/* Desktop Grid - 4 columns */}
-        <div className="hidden md:grid grid-cols-4 gap-6">
+        <div className="hidden md:grid grid-cols-4 gap-8">
           {/* Card 1 */}
           <div className="w-full">
             <div className="relative aspect-[3/4] bg-surface-container-low mb-3 overflow-hidden">
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
 
         {/* Mobile Grid - 2 columns */}
-        <div className="grid grid-cols-2 gap-3 md:hidden">
+        <div className="grid grid-cols-2 gap-4 md:hidden">
           {/* Card 1 */}
           <div className="w-full">
             <div className="relative aspect-[3/4] bg-surface-container-low mb-2 overflow-hidden">
