@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* New Arrivals */}
-      <section className="py-10 md:py-24 bg-surface container mx-auto px-6">
+      <section className="py-7 md:py-24 bg-surface container mx-auto px-6">
         {/* Desktop Header */}
         <div className="hidden md:flex justify-between items-end mb-16 border-b border-outline-variant/30 pb-6">
           <div className="max-w-xl">
