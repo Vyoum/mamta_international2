@@ -4,6 +4,7 @@ import { useState } from "react"
 import { createClient } from "@/lib/supabase/client"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 export default function SignUpPage() {
   const [firstName, setFirstName] = useState("")
@@ -62,27 +63,42 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="min-h-screen bg-surface-container-lowest flex items-center justify-center px-4 py-8">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen relative flex items-center justify-center px-4 py-12">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=2000"
+          alt="Luxury Fashion Background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+      </div>
+
+      {/* Glass Card */}
+      <div className="relative z-10 w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
           <Link href="/" className="inline-block">
-            <span className="font-bodoni text-3xl tracking-normal text-on-surface uppercase">
+            <span className="font-bodoni text-4xl tracking-normal text-white uppercase drop-shadow-lg">
               MAMTA
             </span>
-            <span className="block font-sans text-[9px] tracking-[0.22em] text-on-surface uppercase mt-1 font-medium italic">
+            <span className="block font-sans text-[10px] tracking-[0.25em] text-white/90 uppercase mt-1.5 font-medium italic">
               International
             </span>
           </Link>
         </div>
 
-        <div className="bg-white p-8 border border-outline-variant">
-          <h1 className="text-xl font-medium text-on-surface uppercase tracking-wide text-center mb-6">
+        {/* Glass Effect Container */}
+        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-8 md:p-10 shadow-2xl">
+          <h1 className="text-2xl font-light text-white uppercase tracking-[0.15em] text-center mb-8">
             Create Account
           </h1>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm">
+            <div className="mb-6 p-4 backdrop-blur-sm bg-red-500/20 border border-red-400/30 rounded-lg text-red-100 text-sm text-center">
               {error}
             </div>
           )}
@@ -91,7 +107,7 @@ export default function SignUpPage() {
           <button
             onClick={handleGoogleSignUp}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 border border-on-surface py-3 px-4 text-on-surface hover:bg-on-surface hover:text-surface-container-lowest transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-6"
+            className="w-full flex items-center justify-center gap-3 backdrop-blur-sm bg-white/10 border border-white/30 rounded-lg py-3.5 px-4 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mb-6 group"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
@@ -111,23 +127,23 @@ export default function SignUpPage() {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               />
             </svg>
-            <span className="text-sm uppercase tracking-wide">Continue with Google</span>
+            <span className="text-sm uppercase tracking-wider font-medium">Continue with Google</span>
           </button>
 
           <div className="relative mb-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-outline-variant"></div>
+              <div className="w-full border-t border-white/20"></div>
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-4 text-on-surface/60 tracking-wide">Or</span>
+              <span className="px-4 text-white/60 tracking-wider bg-transparent">Or</span>
             </div>
           </div>
 
           {/* Email/Password Sign Up */}
-          <form onSubmit={handleEmailSignUp} className="space-y-4">
+          <form onSubmit={handleEmailSignUp} className="space-y-5">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label htmlFor="firstName" className="block text-xs uppercase tracking-wide text-on-surface mb-2">
+                <label htmlFor="firstName" className="block text-xs uppercase tracking-wider text-white/70 mb-2.5 font-medium">
                   First Name
                 </label>
                 <input
@@ -136,11 +152,12 @@ export default function SignUpPage() {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   required
-                  className="w-full border-b border-on-surface py-2 px-0 text-on-surface bg-transparent focus:outline-none focus:border-primary"
+                  className="w-full backdrop-blur-sm bg-white/5 border border-white/20 rounded-lg py-3 px-4 text-white placeholder-white/40 focus:outline-none focus:border-white/50 focus:bg-white/10 transition-all duration-300"
+                  placeholder="John"
                 />
               </div>
               <div>
-                <label htmlFor="lastName" className="block text-xs uppercase tracking-wide text-on-surface mb-2">
+                <label htmlFor="lastName" className="block text-xs uppercase tracking-wider text-white/70 mb-2.5 font-medium">
                   Last Name
                 </label>
                 <input
@@ -149,14 +166,15 @@ export default function SignUpPage() {
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   required
-                  className="w-full border-b border-on-surface py-2 px-0 text-on-surface bg-transparent focus:outline-none focus:border-primary"
+                  className="w-full backdrop-blur-sm bg-white/5 border border-white/20 rounded-lg py-3 px-4 text-white placeholder-white/40 focus:outline-none focus:border-white/50 focus:bg-white/10 transition-all duration-300"
+                  placeholder="Doe"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-xs uppercase tracking-wide text-on-surface mb-2">
-                Email
+              <label htmlFor="email" className="block text-xs uppercase tracking-wider text-white/70 mb-2.5 font-medium">
+                Email Address
               </label>
               <input
                 id="email"
@@ -164,13 +182,13 @@ export default function SignUpPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border-b border-on-surface py-2 px-0 text-on-surface bg-transparent focus:outline-none focus:border-primary"
+                className="w-full backdrop-blur-sm bg-white/5 border border-white/20 rounded-lg py-3 px-4 text-white placeholder-white/40 focus:outline-none focus:border-white/50 focus:bg-white/10 transition-all duration-300"
                 placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-xs uppercase tracking-wide text-on-surface mb-2">
+              <label htmlFor="password" className="block text-xs uppercase tracking-wider text-white/70 mb-2.5 font-medium">
                 Password
               </label>
               <input
@@ -180,7 +198,7 @@ export default function SignUpPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={6}
-                className="w-full border-b border-on-surface py-2 px-0 text-on-surface bg-transparent focus:outline-none focus:border-primary"
+                className="w-full backdrop-blur-sm bg-white/5 border border-white/20 rounded-lg py-3 px-4 text-white placeholder-white/40 focus:outline-none focus:border-white/50 focus:bg-white/10 transition-all duration-300"
                 placeholder="Min 6 characters"
               />
             </div>
@@ -188,19 +206,24 @@ export default function SignUpPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-on-surface text-surface-container-lowest py-3 px-4 text-sm uppercase tracking-wide hover:bg-on-surface/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-6"
+              className="w-full bg-white text-on-surface py-3.5 px-4 rounded-lg text-sm uppercase tracking-wider font-semibold hover:bg-white/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-2 shadow-lg"
             >
               {loading ? "Creating Account..." : "Create Account"}
             </button>
           </form>
 
-          <p className="text-center text-sm text-on-surface/70 mt-6">
+          <p className="text-center text-sm text-white/70 mt-8">
             Already have an account?{" "}
-            <Link href="/auth/login" className="text-on-surface underline hover:no-underline">
+            <Link href="/auth/login" className="text-white font-medium hover:underline transition-all">
               Sign In
             </Link>
           </p>
         </div>
+
+        {/* Bottom decorative text */}
+        <p className="text-center text-white/40 text-xs tracking-widest uppercase mt-8">
+          Join the Exclusive Experience
+        </p>
       </div>
     </div>
   )
