@@ -2,8 +2,6 @@ import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 
 export default async function OrdersPage() {
   const supabase = await createClient()
@@ -34,9 +32,7 @@ export default async function OrdersPage() {
     .order("created_at", { ascending: false })
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
+    <div className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="flex items-center gap-4 mb-8">
             <Link href="/account" className="text-on-surface/60 hover:text-on-surface">
@@ -210,8 +206,6 @@ export default async function OrdersPage() {
             </div>
           )}
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   )
 }

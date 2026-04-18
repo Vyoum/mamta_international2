@@ -1,8 +1,6 @@
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import Link from "next/link"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 
 export default async function AccountPage() {
   const supabase = await createClient()
@@ -32,9 +30,7 @@ export default async function AccountPage() {
     .eq("user_id", user.id)
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
+    <div className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="text-2xl md:text-3xl font-bodoni text-on-surface uppercase tracking-wide mb-8">
             My Account
@@ -148,8 +144,6 @@ export default async function AccountPage() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   )
 }
