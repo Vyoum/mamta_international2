@@ -2,8 +2,6 @@ import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import RemoveFromWishlistButton from "@/components/RemoveFromWishlistButton"
 
 type WishlistItem = {
@@ -44,9 +42,7 @@ export default async function WishlistPage() {
     .order("created_at", { ascending: false }) as { data: WishlistItem[] | null }
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
+    <div className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <h1 className="text-2xl md:text-3xl font-bodoni text-on-surface uppercase tracking-wide mb-8">
             My Wishlist
@@ -110,8 +106,6 @@ export default async function WishlistPage() {
             </div>
           )}
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   )
 }

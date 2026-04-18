@@ -1,8 +1,6 @@
 import { createClient } from "@/lib/supabase/server"
 import Link from "next/link"
 import Image from "next/image"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import AddToCartButton from "@/components/AddToCartButton"
 
 export default async function ProductsPage({
@@ -57,9 +55,7 @@ export default async function ProductsPage({
     .order("name")
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
+    <div className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
             <h1 className="text-2xl md:text-3xl font-bodoni text-on-surface uppercase tracking-wide">
@@ -156,8 +152,6 @@ export default async function ProductsPage({
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   )
 }

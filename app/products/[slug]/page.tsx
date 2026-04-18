@@ -2,8 +2,6 @@ import { createClient } from "@/lib/supabase/server"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import AddToWishlistButton from "@/components/AddToWishlistButton"
 
 export default async function ProductPage({
@@ -42,9 +40,7 @@ export default async function ProductPage({
     .limit(4)
 
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
+    <div className="min-h-screen bg-surface-container-lowest pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Breadcrumb */}
           <nav className="mb-8 text-sm">
@@ -249,8 +245,6 @@ export default async function ProductPage({
             </section>
           )}
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   )
 }
