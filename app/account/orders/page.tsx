@@ -51,7 +51,7 @@ export default async function OrdersPage() {
 
           {orders && orders.length > 0 ? (
             <div className="space-y-6">
-              {orders.map((order) => (
+              {orders.map((order: { id: string; created_at: string; total_amount: number; status: string }) => (
                 <div key={order.id} className="bg-white border border-outline-variant">
                   {/* Order Header */}
                   <div className="p-4 md:p-6 border-b border-outline-variant">
