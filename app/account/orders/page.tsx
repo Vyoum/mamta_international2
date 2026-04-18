@@ -51,7 +51,24 @@ export default async function OrdersPage() {
 
           {orders && orders.length > 0 ? (
             <div className="space-y-6">
-              {orders.map((order: { id: string; created_at: string; total_amount: number; status: string }) => (
+              {orders.map((order: {
+  id: string
+  created_at: string
+  total_amount: number
+  status: string
+  shipping_address: { street?: string; city?: string; country?: string } | string | null
+  order_items?: {
+    id: string
+    quantity: number
+    price: number
+    products: {
+      id: string
+      name: string
+      slug: string
+      images: string[]
+    } | null
+  }[]
+}) => (
                 <div key={order.id} className="bg-white border border-outline-variant">
                   {/* Order Header */}
                   <div className="p-4 md:p-6 border-b border-outline-variant">
